@@ -1,5 +1,5 @@
 export interface CharacterEntityApi {
-  id: number;
+  id: string;
   name: string;
   status: string;
   species: string;

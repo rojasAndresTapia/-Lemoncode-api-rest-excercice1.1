@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Button from '@material-ui/core/Button';
-import * as classes from './character-collection.styles';
-import { CharacterEntityApi } from './api/character-collection.api-model';
-import { api } from './api';
+import * as classes from './CharacterCollectionStyles';
+import { CharacterEntityApi } from '../../../api/character-collection.api-model';
+import { api } from '../../../api/character-collection.api';
 import Card from '@material-ui/core/Card';
 import {
   CardActionArea,
@@ -14,7 +14,7 @@ import {
 import { Pagination } from '@material-ui/lab';
 import { generatePath, Link } from 'react-router-dom';
 
-export const CharacterCollectionComponent: React.FunctionComponent = () => {
+export const CharacterCollection: React.FunctionComponent = () => {
   const [characterCollection, setcharacterCollection] = React.useState<
     CharacterEntityApi[]
   >([]);

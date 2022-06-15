@@ -1,28 +1,18 @@
 import React from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { switchRoutes } from './routes';
-import { CharacterCollectionScene, CharacterScene } from 'scenes';
+import { CharacterCollectionScene, CharacterScene } from 'core/scenes';
 
 export const RouterComponent: React.FunctionComponent = () => {
   return (
     <HashRouter>
-      <Switch>
+      <Routes>
         <Route
-          exact={true}
-          path={[switchRoutes.root, switchRoutes.characterCollection]}
-          component={CharacterCollectionScene}
+          path={switchRoutes.root}
+          element={<CharacterCollectionScene />}
         />
-        <Route
-          exact={true}
-          path={switchRoutes.createCharacter}
-          component={CharacterScene}
-        />
-        <Route
-          exact={true}
-          path={switchRoutes.editCharacter}
-          component={CharacterScene}
-        />
-      </Switch>
+        <Route path={switchRoutes.editCharacter} element={<CharacterScene />} />
+      </Routes>
     </HashRouter>
   );
 };

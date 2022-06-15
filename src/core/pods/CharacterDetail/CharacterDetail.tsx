@@ -6,19 +6,19 @@ import {
   CardMedia,
   Typography,
 } from '@material-ui/core';
-import { Character } from './api/character.api-model';
-import * as classes from './character.styles';
+import { Character } from '../../../api/character.api-model';
+import * as classes from './CharacterDetailStyles';
 import Axios from 'axios';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 interface Props {
   character: Character;
 }
 
-export const CharacterComponent: React.FC = () => {
-  const history = useHistory();
+export const CharacterDetail: React.FC = () => {
+  const navigate = useNavigate();
   const [character, setCharacter] = React.useState<Character>({
-    id: 0,
+    id: '',
     name: '',
     status: '',
     species: '',
@@ -47,7 +47,7 @@ export const CharacterComponent: React.FC = () => {
   }, []);
 
   const handleClick = () => {
-    history.push('/');
+    navigate('/');
   };
 
   return (
